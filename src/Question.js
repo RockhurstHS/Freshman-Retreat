@@ -7,7 +7,7 @@ class Question extends React.Component {
         console.log('construct question');
         super(props);
         this.state = {
-            overlay: 'noclick', // 'noclick', 'question', 'spinner'
+            overlay: 'noclick', // 'noclick', 'question'
         }
         this.onReady = this.onReady.bind(this);
         this.onStateChange = this.onStateChange.bind(this);
@@ -36,20 +36,20 @@ class Question extends React.Component {
         console.log('render question');
         console.log('state overlay = ' + this.state.overlay);
 
-        let { question, vidurl, type } = this.props;
+        let { question, vidurl } = this.props;
         let videoMarkup, questionMarkup, opts;
 
         opts = {
-            playerVars: { // https://developers.google.com/youtube/player_parameters
-                autoplay: 1, // auto play, yes
-                //controls: 0, // disable ui controls
-                disablekb: 1, // disable keyboard controls
-                fs: 0, // no full screen
-                modestbranding: 1, // small logo
-                rel: 0, // no related videos
-                playsinline: 1,
-                showinfo: 0,
-                iv_load_policy: 3 // remove annotations
+            playerVars: {           // https://developers.google.com/youtube/player_parameters
+                autoplay: 1,        // auto play, yes
+                controls: 0,        // disable ui controls
+                disablekb: 1,       // disable keyboard controls
+                fs: 0,              // no full screen
+                modestbranding: 1,  // small logo
+                rel: 0,             // no related videos
+                playsinline: 1,     // no ios auto fullscreen
+                showinfo: 0,        // hide video info (deprecated)
+                iv_load_policy: 3   // remove annotations
             }
         }
 
@@ -62,8 +62,8 @@ class Question extends React.Component {
         />
 
         if(this.state.overlay === 'noclick') {
-            // questionMarkup = 
-            // <div className="embed-overlay"></div>
+            questionMarkup = <div className="embed-overlay"></div>
+
         } else if(this.state.overlay === 'question') {
             questionMarkup =
             <div className="embed-overlay">
@@ -78,7 +78,7 @@ class Question extends React.Component {
                 {videoMarkup}
                 {questionMarkup}
             </div>
-        )    
+        )
     }
 }
 

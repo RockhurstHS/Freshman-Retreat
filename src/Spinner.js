@@ -45,11 +45,11 @@ class Spinner extends React.Component {
 
     draw = p5 => {
         p5.clear();
-        p5.fill(0, 0, 255);
+        p5.fill(255, 0, 0, 100);
         p5.ellipse(this.x, this.y, this.w, this.h);
-        p5.fill(255, 0, 0);
+        p5.fill(0, 0, 255, 100);
         p5.arc(this.x, this.y, this.w, this.h, p5.radians(0), p5.radians(this.m));
-        p5.fill(255);
+        p5.fill(255, 100);
         p5.ellipse(this.x, this.y, this.w-this.offset, this.h-this.offset);
         p5.fill(0);
         p5.text(this.count, this.x, this.y);
@@ -68,7 +68,7 @@ class Spinner extends React.Component {
     mouseClicked = p5 => {
         const click = p5.dist(this.x, this.y, p5.mouseX, p5.mouseY);
         if(click < p5.dist(this.x, this.y, this.w-this.offset, this.h-this.offset)) {
-            this.advance();
+            // this.advance();
         }
     }
 

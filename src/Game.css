@@ -55,3 +55,14 @@
     max-width: 100%;
     cursor: pointer;
 }
+
+#end {
+    height: 100vh;
+    text-align: center;
+    display: table;
+}
+
+#end #end-message {
+    display: table-cell;
+    vertical-align: middle;
+}

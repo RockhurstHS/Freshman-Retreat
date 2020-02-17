@@ -10,6 +10,7 @@ class Answer extends React.Component {
 
     handleClick(e) {
         console.log('answer clicked, locked = ' + this.props.lock);
+
         if(!this.props.lock) {
             const status = e.target.id === this.props.answer;
             this.props.callback(status);    
@@ -17,8 +18,9 @@ class Answer extends React.Component {
     }
 
     render() {
-        const {answer, a, b, c, d, lock, lockTimer} = this.props;
+        const {answer, a, b, c, d, lock} = this.props;
         let answerMarkup;
+
         if(lock) {
             answerMarkup=
             <div id="multiple-choice-container">
@@ -31,6 +33,7 @@ class Answer extends React.Component {
                     <div className={"noselect answer " + (answer === 'D' ? 'correct' : 'wrong')} id="D" onClick={(e) => this.handleClick(e)}>(D) {d}</div>
                 </div>
             </div>
+            
         } else {
             answerMarkup =
             <div id="multiple-choice-container">

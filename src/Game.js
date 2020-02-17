@@ -21,19 +21,20 @@ import Ignite from './ignite.jpg';
 class Game extends React.Component {
     constructor(props) {
         console.log('construct game');
+        
         super(props);
+
         this.state = {
-            stage: 'intro', // [intro, quiz, end] /* todo: implement react router */
-            error: null, // netcode
-            isLoaded: false, // netcode
-            entries: [], // stores json
-            index: -1, // current question
-            vplay: true,
-            qlock: false, // a wrong answer locks the ability to answer for 30 secs
-            qlockTimer: 0, // how long to pause if locked
+            stage: 'intro',     // [intro, quiz, end] /* todo: implement react router */
+            error: null,        // netcode
+            isLoaded: false,    // netcode
+            entries: [],        // stores json
+            index: -1,          // current question (last=14)
+            vplay: true,        // video is playing
+            qlock: false,       // disable multiple choice answer clicks
+            qlockTimer: 0,      // duration of answer click disable
         };
 
-        //this.intervalHandle = setInterval(this.tick, 1000);
         this.receiveAnswer = this.receiveAnswer.bind(this);
         this.receiveVideoState = this.receiveVideoState.bind(this);
         this.advanceQuestion = this.advanceQuestion.bind(this);
@@ -41,7 +42,9 @@ class Game extends React.Component {
 
     componentDidMount() {
         console.log('game component did mount');
+        
         const data = 'https://spreadsheets.google.com/feeds/list/1gFBVScKExlatL52RSngKDOLfDGNEo4GebnuHMlVhmNE/od6/public/values?alt=json';
+        
         fetch(data)
         .then( res => res.json() )
         .then(
@@ -88,15 +91,18 @@ class Game extends React.Component {
 
     receiveAnswer(correct) {
         console.log('receive answer');
-        // let { score, timer, question } = this.state;
+
         if(correct) {
             console.log('correct answer');
+            
             this.setState({
                 qlock: true,
                 qlockTimer: 5
             })
+
         } else {
             console.log('wrong answer');
+            
             this.setState({
                 qlock: true,
                 qlockTimer: 30
@@ -106,27 +112,37 @@ class Game extends React.Component {
 
     advanceQuestion() {
         console.log('advance question');
-        let { stage, qlock } = this.state;
-        qlock = false;
-        stage = stage === 'intro' ? 'quiz' : stage;
+
+        let stage = this.state.stage;
+        let index = this.state.index + 1;
+        const entries = this.state.entries;
+        const type = entries[index].gsx$type.$t;
+        
+        if (type === 'E') 
+            stage = 'end'
+        else if (type === 'V' && stage === 'intro') 
+            stage = 'quiz';
+
         this.setState({
             stage,
-            qlock,
-            index: this.state.index + 1
+            index,
+            qlock: false,
         })
     }
 
     render() {
         console.log('render game');
+
         const { stage, error, isLoaded } = this.state;
 
         if (error) {
             return <div>Error: {error.message}</div>
+
         } else if(!isLoaded) {
             return <div>Loading...</div>
+
         } else if(stage === 'quiz') {
             const { entries, index, vplay, qlock, qlockTimer } = this.state;
-            let questionMarkup, answerMarkup;
 
             return (
                 <div id="game">
@@ -152,12 +168,18 @@ class Game extends React.Component {
                     />}
                 </div>
             )
+
         } else if(stage === 'end') {
+            const {entries, index} = this.state;
+            const question = entries[index].gsx$question.$t;
             return (
                 <div id="end">
-                    <div>All done :)</div>
+                    <div id="end-message">
+                        <h1>{question}</h1>
+                    </div>
                 </div>
             )
+
         } else {
             return (
                 <div id="intro">
