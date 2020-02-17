@@ -35,8 +35,9 @@ class Question extends React.Component {
     render() {
         console.log('render question');
         console.log('state overlay = ' + this.state.overlay);
+        console.log('qindex = ' + this.props.index);
 
-        let { question, vidurl } = this.props;
+        let { question, vidurl, index } = this.props;
         let videoMarkup, questionMarkup, opts;
 
         opts = {
@@ -61,7 +62,7 @@ class Question extends React.Component {
             onStateChange={this.onStateChange}
         />
 
-        if(this.state.overlay === 'noclick') {
+        if(index > 0 && this.state.overlay === 'noclick') {
             questionMarkup = <div className="embed-overlay"></div>
 
         } else if(this.state.overlay === 'question') {

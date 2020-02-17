@@ -1,0 +1,6 @@
+#trash-can {
+    position: fixed;
+    display: none;
+    left: 20px;
+    bottom: 20px;
+}

@@ -13,6 +13,7 @@ import React from 'react';
 import Question from './Question';
 import Answer from './Answer';
 import Spinner from './Spinner';
+import TrashCan from './TrashCan';
 
 import './Game.css';
 
@@ -29,7 +30,7 @@ class Game extends React.Component {
             error: null,        // netcode
             isLoaded: false,    // netcode
             entries: [],        // stores json
-            index: -1,          // current question (last=14)
+            index: -1,   // current question (last=14)
             vplay: true,        // video is playing
             qlock: false,       // disable multiple choice answer clicks
             qlockTimer: 0,      // duration of answer click disable
@@ -45,6 +46,16 @@ class Game extends React.Component {
         
         const data = 'https://spreadsheets.google.com/feeds/list/1gFBVScKExlatL52RSngKDOLfDGNEo4GebnuHMlVhmNE/od6/public/values?alt=json';
         
+        // todo: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+        let i = parseInt(localStorage.getItem('index')) - 1;
+        if(i === NaN) console.log('nan');
+        if(i === null) console.log('null');
+        if(i !== NaN && i !== null ) {
+            //console.log('localStorage.getItem("index") === ' + i);
+            //this.setState({ index: i });
+        }
+
+
         fetch(data)
         .then( res => res.json() )
         .then(
@@ -129,6 +140,8 @@ class Game extends React.Component {
             qlock: false,
             vplay: true
         })
+
+        //localStorage.setItem('index', index);
     }
 
     render() {
@@ -154,6 +167,7 @@ class Game extends React.Component {
                             vidurl={entries[index].gsx$youtube.$t}
                             type={entries[index].gsx$type.$t}
                             callback={this.receiveVideoState}
+                            index={index}
                         />
                         {qlock && <Spinner duration={qlockTimer} callback={this.advanceQuestion} />}
                     </div>
@@ -167,12 +181,14 @@ class Game extends React.Component {
                         lock={qlock}
                         lockTimer={qlockTimer}
                     />}
+                    <TrashCan />
                 </div>
             )
 
         } else if(stage === 'end') {
             const {entries, index} = this.state;
             const question = entries[index].gsx$question.$t;
+            localStorage.clear('index');
             return (
                 <div id="end">
                     <div id="end-message">
