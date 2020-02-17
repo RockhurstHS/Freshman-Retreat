@@ -127,6 +127,7 @@ class Game extends React.Component {
             stage,
             index,
             qlock: false,
+            vplay: true
         })
     }
 

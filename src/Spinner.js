@@ -45,7 +45,10 @@ class Spinner extends React.Component {
 
     draw = p5 => {
         p5.clear();
-        p5.fill(255, 0, 0, 100);
+        if(this.props.duration === 30)
+            p5.fill(255, 0, 0, 100);
+        else
+            p5.fill(0, 255, 0, 100);
         p5.ellipse(this.x, this.y, this.w, this.h);
         p5.fill(0, 0, 255, 100);
         p5.arc(this.x, this.y, this.w, this.h, p5.radians(0), p5.radians(this.m));
