@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d2341763153a8d9987d188b382668fc",
+    "revision": "817b133d5cfe63705d137ae659d82f96",
     "url": "/Freshman-Retreat/index.html"
   },
   {
-    "revision": "ea7b6b536e4fc705f4f1",
+    "revision": "ce0640cc18eed0ba17b9",
     "url": "/Freshman-Retreat/static/css/main.0ec3c50c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Freshman-Retreat/static/js/2.8212038f.chunk.js.LICENSE"
   },
   {
-    "revision": "ea7b6b536e4fc705f4f1",
-    "url": "/Freshman-Retreat/static/js/main.161f68fa.chunk.js"
+    "revision": "ce0640cc18eed0ba17b9",
+    "url": "/Freshman-Retreat/static/js/main.197d991f.chunk.js"
   },
   {
     "revision": "23619d622a256d9d5f3a",
