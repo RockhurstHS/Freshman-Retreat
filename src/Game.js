@@ -44,8 +44,9 @@ class Game extends React.Component {
     componentDidMount() {
         console.log('game component did mount');
         
-        const data = 'https://spreadsheets.google.com/feeds/list/1gFBVScKExlatL52RSngKDOLfDGNEo4GebnuHMlVhmNE/od6/public/values?alt=json';
-        
+        // 2019-20 const data = 'https://spreadsheets.google.com/feeds/list/1gFBVScKExlatL52RSngKDOLfDGNEo4GebnuHMlVhmNE/od6/public/values?alt=json';
+        const data = 'https://spreadsheets.google.com/feeds/list/1E0PWGXusSh5FF-mqHTcoR9wHuveyTYTLEKrnFIxCfFA/od6/public/values?alt=json';
+
         // todo: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
         let i = parseInt(localStorage.getItem('index')) - 1;
         if(i === NaN) console.log('nan');
