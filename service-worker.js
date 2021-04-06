@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Freshman-Retreat/precache-manifest.be2e13ecd320fabd5504874fe8087090.js"
+  "/Freshman-Retreat/precache-manifest.0f5436d2470cdba11cd0032e29bbc9fa.js"
 );
 
 self.addEventListener('message', (event) => {

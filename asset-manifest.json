@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/Freshman-Retreat/static/css/main.6ff20043.chunk.css",
-    "main.js": "/Freshman-Retreat/static/js/main.23f24ace.chunk.js",
-    "main.js.map": "/Freshman-Retreat/static/js/main.23f24ace.chunk.js.map",
+    "main.js": "/Freshman-Retreat/static/js/main.970fb7bc.chunk.js",
+    "main.js.map": "/Freshman-Retreat/static/js/main.970fb7bc.chunk.js.map",
     "runtime-main.js": "/Freshman-Retreat/static/js/runtime-main.366f563f.js",
     "runtime-main.js.map": "/Freshman-Retreat/static/js/runtime-main.366f563f.js.map",
     "static/js/2.12d40f26.chunk.js": "/Freshman-Retreat/static/js/2.12d40f26.chunk.js",
     "static/js/2.12d40f26.chunk.js.map": "/Freshman-Retreat/static/js/2.12d40f26.chunk.js.map",
     "index.html": "/Freshman-Retreat/index.html",
-    "precache-manifest.be2e13ecd320fabd5504874fe8087090.js": "/Freshman-Retreat/precache-manifest.be2e13ecd320fabd5504874fe8087090.js",
+    "precache-manifest.0f5436d2470cdba11cd0032e29bbc9fa.js": "/Freshman-Retreat/precache-manifest.0f5436d2470cdba11cd0032e29bbc9fa.js",
     "service-worker.js": "/Freshman-Retreat/service-worker.js",
     "static/css/main.6ff20043.chunk.css.map": "/Freshman-Retreat/static/css/main.6ff20043.chunk.css.map",
     "static/js/2.12d40f26.chunk.js.LICENSE": "/Freshman-Retreat/static/js/2.12d40f26.chunk.js.LICENSE",
-    "static/media/ignite.jpg": "/Freshman-Retreat/static/media/ignite.56afa82d.jpg"
+    "static/media/ignite.jpg": "/Freshman-Retreat/static/media/ignite.29492f15.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.366f563f.js",
     "static/js/2.12d40f26.chunk.js",
     "static/css/main.6ff20043.chunk.css",
-    "static/js/main.23f24ace.chunk.js"
+    "static/js/main.970fb7bc.chunk.js"
   ]
 }

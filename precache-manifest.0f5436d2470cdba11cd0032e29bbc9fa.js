@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d1fd27c2a83568d0b2ccba3fea000007",
+    "revision": "a204d3606ce7fc3c4e3fac43fa8705f6",
     "url": "/Freshman-Retreat/index.html"
   },
   {
-    "revision": "425764ab1429cf9a4301",
+    "revision": "12806daed7dc5cb64033",
     "url": "/Freshman-Retreat/static/css/main.6ff20043.chunk.css"
   },
   {
@@ -16,15 +16,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Freshman-Retreat/static/js/2.12d40f26.chunk.js.LICENSE"
   },
   {
-    "revision": "425764ab1429cf9a4301",
-    "url": "/Freshman-Retreat/static/js/main.23f24ace.chunk.js"
+    "revision": "12806daed7dc5cb64033",
+    "url": "/Freshman-Retreat/static/js/main.970fb7bc.chunk.js"
   },
   {
     "revision": "23619d622a256d9d5f3a",
     "url": "/Freshman-Retreat/static/js/runtime-main.366f563f.js"
   },
   {
-    "revision": "56afa82de3459078d805c0852e6a6c20",
-    "url": "/Freshman-Retreat/static/media/ignite.56afa82d.jpg"
+    "revision": "29492f15c4e370cadfddc4291bdc8147",
+    "url": "/Freshman-Retreat/static/media/ignite.29492f15.jpg"
   }
 ]);
